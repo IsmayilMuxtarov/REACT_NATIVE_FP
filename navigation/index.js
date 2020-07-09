@@ -1,18 +1,17 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { AuthScreen } from "../screens";
 import { RootTabs } from "./RootTabs";
 
 import { connect } from "react-redux";
-import { getUserData } from "../store/user";
+import { getUserAuthStatus } from "../store/user";
+import { StarterStackNav } from "./StackNavs";
 
-const mapStateToProps =(state) =>({ userData:getUserData(state) });
+const mapStateToProps =(state) =>({ getUserAuthStatus:getUserAuthStatus(state) });
 
-export const RootNav =connect(mapStateToProps,{})(({userData}) => {
-  console.log(userData);
+export const RootNav =connect(mapStateToProps,{})(({getUserAuthStatus}) => {
   return (
   <NavigationContainer>
-    {userData.authStatus ?  <RootTabs/> : <AuthScreen />}
+    {getUserAuthStatus ?  <RootTabs/> : <StarterStackNav />}
   </NavigationContainer>
   );
 });
