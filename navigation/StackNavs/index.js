@@ -3,3 +3,4 @@ export { ProductsStackNav } from "./ProductsStackNav";
 export { CartStackNav } from "./CartStackNav";
 export { FavsStackNav } from "./FavsStackNav";
 export { AccountStackNav } from "./AccountStackNav";
+export { StarterStackNav } from "./StarterStackNav";

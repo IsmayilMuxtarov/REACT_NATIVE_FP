@@ -1,14 +1,15 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { HomeScreen, HomeCategoryScreen, SingleProduct } from "../../screens";
+import { headerDefaultStyles } from "../../styles/headerDefaultStyle";
 
 
 
 const { Navigator, Screen } = createStackNavigator();
 export const HomeStackNav = () => (
-  <Navigator>
+  <Navigator screenOptions={headerDefaultStyles}>
     <Screen name="HomeScreen" component={HomeScreen} />
     <Screen name="HomeCategoryScreen" component={HomeCategoryScreen} />
-    <Screen name="SingleProduct" component={SingleProduct} />
+    <Screen name="SingleProductHome" component={SingleProduct} />
   </Navigator>
 );
