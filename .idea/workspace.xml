@@ -5,7 +5,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/screens/AccountScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccountScreen/index.js" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/screens/CartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CartScreen.js" afterDir="false" />
+=======
+>>>>>>> master
       <change beforePath="$PROJECT_DIR$/screens/FavoriteScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/FavoriteScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
@@ -76,9 +79,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593546054491">
+    <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594323172161">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+<<<<<<< HEAD
     <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1593546054491" />
     <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1593967244775">
       <screen x="0" y="0" width="1366" height="728" />
@@ -104,6 +108,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1594233876300" />
+=======
+    <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1594323172161" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1594323439392">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594323439392" />
+>>>>>>> master
     <state x="405" y="277" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1593545637216">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

@@ -42,7 +42,6 @@ export const CartCounter = connect(null, {
             <TouchableOpacity onPress={() => INCREASE()}>
                 <AntDesign name="pluscircle" size={22} color={COLORS.primary}/>
             </TouchableOpacity>
-
         </View>
     )
 });

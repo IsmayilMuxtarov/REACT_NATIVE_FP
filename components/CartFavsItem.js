@@ -8,6 +8,7 @@ import {COLORS} from "../styles/colors";
 import {CustomText, CartCounter} from "../components";
 import {deleteItemFromCart, addToCart} from "../store/cart";
 import {deleteItemFromFavorites, addToFavorites} from "../store/favorites";
+import {textShortening} from '../utils'
 
 
 export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, deleteItemFromFavorites, addToFavorites})((
@@ -98,7 +99,8 @@ export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, delete
             </View>
             <View style={styles.rightSide}>
                 <View>
-                    <CustomText weight='medium' style={{fontSize: 14, marginBottom: 7}}>{name}</CustomText>
+                    <CustomText weight='medium'
+                                style={{fontSize: 14, marginBottom: 7}}>{textShortening(name, 20,)}</CustomText>
                     <CustomText weight='regular' style={{fontSize: 11, marginBottom: 7, fontStyle: 'italic'}}>
                         Size {size}g. Color: {color}
                     </CustomText>

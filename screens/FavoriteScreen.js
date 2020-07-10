@@ -16,6 +16,7 @@ export const FavoriteScreen = connect(mapStateToProps)((props) => {
     return (
         <View style={styles.container}>
             <FlatList
+                showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.list}
                 data={favorites}
                 renderItem={({item}) => {

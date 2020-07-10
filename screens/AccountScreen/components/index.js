@@ -1,0 +1,1 @@
+export {PetsType} from './PetsType';

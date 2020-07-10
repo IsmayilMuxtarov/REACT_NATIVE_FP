@@ -3,6 +3,7 @@ const DELETE_ITEM_FROM_CART = "DELETE_ITEM_FROM_CART";
 const ADD_TO_CART = "ADD_TO_CART";
 const INCREASE_CART_ITEM_COUNT = "INCREASE_CART_ITEM_COUNT";
 const DECREASE_CART_ITEM_COUNT = "DECREASE_CART_ITEM_COUNT";
+const UPDATE_CART_ITEM = "UPDATE_CART_ITEM";
 
 
 // SELECTORS
@@ -112,6 +113,20 @@ export function reducer(state = initialState, {type, payload}) {
                     })
                 ]
             };
+        case UPDATE_CART_ITEM:
+            return {
+                ...state,
+                cart: [
+                    ...state.cart.map((item) => {
+                        if (item.id === payload.id) {
+                            return {
+                                ...payload,
+                            }
+                        }
+                        return item;
+                    })
+                ]
+            };
         default:
             return state;
     }
@@ -132,5 +147,9 @@ export const increaseCartItemCount = (payload) => ({
 });
 export const decreaseCartItemCount = (payload) => ({
     type: DECREASE_CART_ITEM_COUNT,
+    payload
+});
+export const updateCartItem = (payload) => ({
+    type: UPDATE_CART_ITEM,
     payload
 });

@@ -32,6 +32,7 @@ export const CartScreen = connect(mapStateToProps)((props) => {
     return (
         <View style={styles.container}>
             <FlatList
+                showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.list}
                 data={favorites}
                 renderItem={({item}) => {
@@ -61,7 +62,7 @@ export const CartScreen = connect(mapStateToProps)((props) => {
                 </View>
                 <TouchableOpacity style={styles.checkOutBtn} onPress={() => props.navigation.navigate('Home')}>
                     <CustomText weight="medium"
-                                style={{fontSize: 18, color: "#02020d"}}>
+                                style={{fontSize: 18, color: "#0a1063"}}>
                         Checkout
                     </CustomText>
                 </TouchableOpacity>
