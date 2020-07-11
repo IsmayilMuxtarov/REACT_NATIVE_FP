@@ -102,7 +102,7 @@ export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, delete
                     <CustomText weight='medium'
                                 style={{fontSize: 14, marginBottom: 7}}>{textShortening(name, 20,)}</CustomText>
                     <CustomText weight='regular' style={{fontSize: 11, marginBottom: 7, fontStyle: 'italic'}}>
-                        Size {size} Color: {color}
+                        Size: {size}. Color: {color}
                     </CustomText>
                     <CustomText weight='italic' style={{color: COLORS.primary,}}>{price} LE</CustomText>
                 </View>
