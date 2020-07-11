@@ -9,7 +9,7 @@ import {addToFavorites} from "../../store/favorites";
 import {getCart, addToCart, updateCartItem} from "../../store/cart";
 
 import {COLORS} from '../../styles/colors';
-import {CustomText} from "../../components";
+import {CustomText, GetColor, GetSize} from "../../components";
 import {AntDesign, Feather, MaterialIcons} from "@expo/vector-icons";
 
 const mapsStateToProps = (state) => ({
@@ -23,7 +23,7 @@ const initialState = {
     img: '',
     size: '',
     color: '',
-    price: '',
+    price: 'purple',
     count: 1,
     img2: '',
     description: '',
@@ -79,7 +79,7 @@ export const SingleProduct = connect(mapsStateToProps, {
         setState({
             ...state,
             showAddToCart: !state.showAddToCart,
-        })
+        });
     };
 
 
@@ -126,6 +126,8 @@ export const SingleProduct = connect(mapsStateToProps, {
         });
     };
 
+
+    // function for increasing the items count
     const INCREASE = () => {
         setState({
             ...state,
@@ -133,6 +135,7 @@ export const SingleProduct = connect(mapsStateToProps, {
         });
     };
 
+    // function for decreasing the items count
     const DECREASE = () => {
         if (state.count === 1) {
             return;
@@ -142,6 +145,19 @@ export const SingleProduct = connect(mapsStateToProps, {
                 count: state.count - 1
             });
         }
+    };
+
+    // function for changing the state
+    const changeState = (name, value) => {
+        setState({
+            ...state,
+            [name]: value,
+        })
+    };
+
+    // function for state Item matching
+    const stateItemMatching = (name, value) => {
+        return state[name] === value;
     };
 
     return (
@@ -165,26 +181,33 @@ export const SingleProduct = connect(mapsStateToProps, {
                         </View>
                     </View>
                 </View>
+                <GetColor changeState={changeState} colorMatching={stateItemMatching}/>
+                <GetSize changeState={changeState} sizeMatching={stateItemMatching}/>
             </ScrollView>
 
-            <View style={[styles.addToCart, {display: state.showAddToCart ? "flex" : "none"}]}>
-                <View style={styles.counter}>
-                    <TouchableOpacity onPress={() => DECREASE()}>
-                        <AntDesign name="minuscircle" size={22} color="white"/>
-                    </TouchableOpacity>
-                    <CustomText weight="medium" style={{fontSize: 16, color: "white"}}>{state.count}</CustomText>
-                    <TouchableOpacity onPress={() => INCREASE()}>
-                        <AntDesign name="pluscircle" size={22} color="white"/>
-                    </TouchableOpacity>
-                </View>
+            {
+                state.showAddToCart ?
+                    <View style={styles.addToCart}>
+                        <View style={styles.counter}>
+                            <TouchableOpacity onPress={() => DECREASE()}>
+                                <AntDesign name="minuscircle" size={22} color="white"/>
+                            </TouchableOpacity>
+                            <CustomText weight="medium"
+                                        style={{fontSize: 16, color: "white"}}>{state.count}</CustomText>
+                            <TouchableOpacity onPress={() => INCREASE()}>
+                                <AntDesign name="pluscircle" size={22} color="white"/>
+                            </TouchableOpacity>
+                        </View>
 
-                <TouchableOpacity style={styles.addToCartBtn} onPress={() => addToCartHandler()}>
-                    <CustomText weight="medium"
-                                style={{fontSize: 16, color: "#0a1063"}}>
-                        ADD TO CARD
-                    </CustomText>
-                </TouchableOpacity>
-            </View>
+                        <TouchableOpacity style={styles.addToCartBtn} onPress={() => addToCartHandler()}>
+                            <CustomText weight="medium"
+                                        style={{fontSize: 16, color: "#0a1063"}}>
+                                ADD TO CARD
+                            </CustomText>
+                        </TouchableOpacity>
+                    </View> : null
+            }
+
         </View>
     )
 });
@@ -196,6 +219,7 @@ const styles = StyleSheet.create({
     },
 
     PagescrollContainer: {
+        width: Dimensions.get('window').width,
         backgroundColor: '#F3FBEE',
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
@@ -220,7 +244,7 @@ const styles = StyleSheet.create({
         flex: 0.1,
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItem: "center",
+        alignItems: "center",
         borderTopWidth: 1,
         borderColor: COLORS.primary,
         padding: 10,
@@ -230,7 +254,7 @@ const styles = StyleSheet.create({
         width: 80,
         flexDirection: "row",
         justifyContent: "space-between",
-        alignItem: "center",
+        alignItems: "center",
     },
 
     addToCart: {
@@ -243,7 +267,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         borderTopRightRadius: 50,
         borderTopLeftRadius: 50,
-        position: "fixed",
+        position: "absolute",
         bottom: 0,
         right: 0,
         left: 0,

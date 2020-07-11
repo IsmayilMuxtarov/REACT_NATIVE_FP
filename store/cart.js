@@ -1,9 +1,12 @@
+import {SET_APP_DATA} from "../api/storeDataAS";
+
 // ACTION TYPES
 const DELETE_ITEM_FROM_CART = "DELETE_ITEM_FROM_CART";
 const ADD_TO_CART = "ADD_TO_CART";
 const INCREASE_CART_ITEM_COUNT = "INCREASE_CART_ITEM_COUNT";
 const DECREASE_CART_ITEM_COUNT = "DECREASE_CART_ITEM_COUNT";
 const UPDATE_CART_ITEM = "UPDATE_CART_ITEM";
+const SET_USER_DATA = "SET_USER_DATA";
 
 
 // SELECTORS
@@ -127,6 +130,8 @@ export function reducer(state = initialState, {type, payload}) {
                     })
                 ]
             };
+        case SET_APP_DATA:
+            return {...state, ...payload[MODULE_NAME]}
         default:
             return state;
     }
