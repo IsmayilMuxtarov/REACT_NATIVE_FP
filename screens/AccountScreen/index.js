@@ -57,6 +57,6 @@ const styles = StyleSheet.create({
     img: {
         width: 80,
         height: 80,
-        borderRadius: "50%",
+        borderRadius: 50,
     }
 });

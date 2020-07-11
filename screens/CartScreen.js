@@ -1,10 +1,9 @@
 import React from 'react'
-import {View, FlatList, StyleSheet, Button} from 'react-native'
+import {View, FlatList, StyleSheet, TouchableOpacity} from 'react-native'
 import {connect} from "react-redux";
 
 import {CartFavsItem, CustomText} from "../components";
 import {getCart} from "../store/cart";
-import TouchableOpacity from "react-native-web/dist/exports/TouchableOpacity";
 
 
 const mapStateToProps = (state) => ({
@@ -22,7 +21,7 @@ export const CartScreen = connect(mapStateToProps)((props) => {
             if (!isNaN(discount)) {
                 totalSum = totalSum + (((item.price * discount) / 100) * item.count);
             } else {
-                totalSum = totalSum + (item.price  * item.count);
+                totalSum = totalSum + (item.price * item.count);
             }
         });
         return totalSum;
@@ -97,7 +96,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderTopRightRadius: 50,
         borderTopLeftRadius: 50,
-        position: "fixed",
+        position: "absolute",
         bottom: 0,
         right: 0,
         left: 0,
