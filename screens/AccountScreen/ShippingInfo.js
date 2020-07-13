@@ -1,40 +1,33 @@
 import React from 'react'
-import {View, TouchableOpacity, StyleSheet, Image, Dimensions} from 'react-native'
+import {View, StyleSheet, Image, Dimensions} from 'react-native'
 import {CustomText} from "../../components";
-import {AccountContent} from "./components";
 import {COLORS} from "../../styles/colors";
 
-export const AccountScreen = ({navigation}) => {
+export const ShippingInfo = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.content}>
-                <View style={styles.head}>
-                    <View style={styles.headContainer}>
-                        <TouchableOpacity>
-                            <Image style={styles.img}
-                                   ImageResizeMode='cover'
-                                   source={{uri: "https://choicebroadband.co.nz/wp-content/uploads/2019/10/pic2.jpg"}}/>
-                        </TouchableOpacity>
-                        <CustomText weight='medium' style={{color: "#0a1063"}}>My Address</CustomText>
+                <View style={styles.contentHead}>
+                    <View style={styles.headTitle}>
+                        <CustomText weight="medium" style={{fontSize: 20,}}>Shipping Info</CustomText>
+                        <View style={styles.titleLine}/>
                     </View>
-                    <View style={styles.headContainer}>
-                        <TouchableOpacity>
-                            <Image style={styles.img}
-                                   ImageResizeMode='cover'
-                                   source={{uri: "https://image.freepik.com/free-vector/_39961-391.jpg"}}/>
-                        </TouchableOpacity>
-                        <CustomText weight='medium' style={{color: "#0a1063"}}>My Pets</CustomText>
-                    </View>
-                    <View style={styles.headContainer}>
-                        <TouchableOpacity>
-                            <Image style={styles.img}
-                                   ImageResizeMode='cover'
-                                   source={{uri: "https://previews.123rf.com/images/magurok/magurok1704/magurok170400061/76041725-hand-holding-checklist-and-hand-holding-pen-sheet-of-paper-with-check-marks-tick-icons-filling-form-.jpg"}}/>
-                        </TouchableOpacity>
-                        <CustomText weight='medium' style={{color: "#0a1063"}}>My Orders</CustomText>
+                    <View>
+                        <CustomText weight="light" style={{marginBottom: 4}}>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus.
+                        </CustomText>
+                        <CustomText weight="light">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus.
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                            Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+                            ridiculus mus.
+                        </CustomText>
                     </View>
                 </View>
-                <AccountContent navigation={navigation}/>
                 <View style={styles.contentBottom}>
                     <View style={styles.contentBottomText}>
                         <CustomText weight='medium' style={{color: "#0a1063"}}>Rewards</CustomText>
@@ -49,7 +42,7 @@ export const AccountScreen = ({navigation}) => {
                         </View>
                         <Image style={styles.bottomImg}
                                ImageResizeMode='cover'
-                               source={{uri: "https://turbinu.ru/wp-content/uploads/2018/05/podarok.png"}}/>
+                               source={{uri: "https://cdn0.iconfinder.com/data/icons/logistic-52/64/Bike-delivery-motorbike-package-512.png"}}/>
                     </View>
                 </View>
             </View>
@@ -88,23 +81,26 @@ const styles = StyleSheet.create({
         elevation: 7,
     },
 
-    head: {
-        width: "100%",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: 'center',
-    },
-
-    headContainer: {
+    contentHead: {
         justifyContent: "center",
         alignItems: "center",
     },
 
-    img: {
-        width: 70,
-        height: 70,
-        borderRadius: 50,
+    headTitle: {
+        position: "relative",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: 40,
     },
+
+    titleLine: {
+        width: 80,
+        height: 2,
+        backgroundColor: COLORS.primary,
+        position: "absolute",
+        bottom: -10,
+    },
+
 
     contentBottom: {
         position: "absolute",
@@ -140,6 +136,8 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
         right: 0,
-        bottom: -2,
+        bottom: -4,
     }
 });
+
+
