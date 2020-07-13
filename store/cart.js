@@ -16,46 +16,46 @@ export const getCart = (state) => state[MODULE_NAME];
 //REDUCER
 const initialState = {
     cart: [
-        {
-            id: `${Math.random()}${Date.now()}`,
-            name: "Dog dry food - Hills sciense",
-            status: "",
-            img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
-            size: 250,
-            color: "Red",
-            price: 130,
-            count: 1
-        },
-        {
-            id: `${Math.random()}${Date.now()}`,
-            name: "Dog dry food - Hills sciense",
-            status: "70%",
-            img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
-            size: 250,
-            color: "Red",
-            price: 130,
-            count: 1
-        },
-        {
-            id: `${Math.random()}${Date.now()}`,
-            name: "Dog dry food - Hills sciense",
-            status: "New",
-            img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
-            size: 250,
-            color: "Red",
-            price: 130,
-            count: 1
-        },
-        {
-            id: `${Math.random()}${Date.now()}`,
-            name: "Dog dry food - Hills sciense",
-            status: "30%",
-            img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
-            size: 250,
-            color: "Red",
-            price: 130,
-            count: 1
-        },
+        // {
+        //     id: `${Math.random()}${Date.now()}`,
+        //     name: "Dog dry food - Hills sciense",
+        //     status: "",
+        //     img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
+        //     size: 250,
+        //     color: "Red",
+        //     price: 130,
+        //     count: 1
+        // },
+        // {
+        //     id: `${Math.random()}${Date.now()}`,
+        //     name: "Dog dry food - Hills sciense",
+        //     status: "70%",
+        //     img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
+        //     size: 250,
+        //     color: "Red",
+        //     price: 130,
+        //     count: 1
+        // },
+        // {
+        //     id: `${Math.random()}${Date.now()}`,
+        //     name: "Dog dry food - Hills sciense",
+        //     status: "New",
+        //     img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
+        //     size: 250,
+        //     color: "Red",
+        //     price: 130,
+        //     count: 1
+        // },
+        // {
+        //     id: `${Math.random()}${Date.now()}`,
+        //     name: "Dog dry food - Hills sciense",
+        //     status: "30%",
+        //     img: 'https://www.packagingstrategies.com/ext/resources/ISSUES/2019/04-April/34-MacAndMaya.jpg',
+        //     size: 250,
+        //     color: "Red",
+        //     price: 130,
+        //     count: 1
+        // },
     ]
 };
 

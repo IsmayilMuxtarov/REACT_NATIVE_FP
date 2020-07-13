@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, Dimensions, Image, TouchableOpacity} from 'react-native';
 import {connect} from "react-redux";
 
-import {Feather, MaterialIcons, FontAwesome} from '@expo/vector-icons';
+import {Feather, FontAwesome} from '@expo/vector-icons';
 
 import {COLORS} from "../styles/colors";
 import {CustomText, CartCounter} from "../components";
@@ -22,7 +22,6 @@ export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, delete
         price,
         count,
         cartScreen = false,
-        productsScreen = false,
         deleteItemFromCart,
         addToCart,
         deleteItemFromFavorites,
@@ -32,7 +31,6 @@ export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, delete
     // function for adding item to Cart screen
     const addToCartHandler = () => {
         addToCart({
-            screenName: 'cart',
             id: itemID,
             name: name,
             status: status,
@@ -43,10 +41,11 @@ export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, delete
             count: count
         });
     };
+
+
     // function for adding item to Favorites screen
     const addToFavoritesHandler = () => {
         addToFavorites({
-            screenName: 'cart',
             id: itemID,
             name: name,
             status: status,
@@ -111,20 +110,14 @@ export const CartFavsItem = connect(null, {deleteItemFromCart, addToCart, delete
                     {
                         cartScreen ?
                             <CartCounter itemID={itemID} count={count}/>
-                            : <TouchableOpacity onLongPress={() => addToCartHandler()}>
+                            :
+                            <TouchableOpacity onLongPress={() => addToCartHandler()}>
                                 <Feather name="shopping-cart" size={22} color={COLORS.primary}/>
                             </TouchableOpacity>
                     }
-                    {
-                        productsScreen ?
-                            <TouchableOpacity onLongPress={() => addToFavoritesHandler()}>
-                                <MaterialIcons name="favorite-border" size={22} color={COLORS.primary}/>
-                            </TouchableOpacity>
-                            :
-                            <TouchableOpacity onLongPress={() => deleteItemHandler()}>
-                                <FontAwesome name="trash-o" size={22} color="red"/>
-                            </TouchableOpacity>
-                    }
+                    <TouchableOpacity onLongPress={() => deleteItemHandler()}>
+                        <FontAwesome name="trash-o" size={22} color="red"/>
+                    </TouchableOpacity>
                 </View>
             </View>
         </TouchableOpacity>
@@ -142,14 +135,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // shadow
+        // Shadow
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: 5,
+            height: 3,
         },
-        shadowOpacity: 0.34,
-        shadowRadius: 6.27,
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+
+        elevation: 7,
     },
 
     leftSide: {
