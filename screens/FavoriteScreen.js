@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 
 import {CartFavsItem} from "../components";
 import {getFavorites} from "../store/favorites";
+import { CustomLayout } from '../commons';
 
 
 const mapStateToProps = (state) => ({
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => ({
 export const FavoriteScreen = connect(mapStateToProps)((props) => {
     const favorites = props.data.favorites;
     return (
-        <View style={styles.container}>
+        <CustomLayout style={styles.container}>
             <FlatList
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.list}
@@ -33,8 +34,10 @@ export const FavoriteScreen = connect(mapStateToProps)((props) => {
                         />
                     );
                 }}
+                keyExtractor={(item,index) => (`${item.id}asd`).toString()}
+
             />
-        </View>
+        </CustomLayout>
     )
 });
 
@@ -43,8 +46,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopRightRadius: 50,
-        borderTopLeftRadius: 50,
         backgroundColor: '#f2f2f2',
         paddingTop: 20,
 

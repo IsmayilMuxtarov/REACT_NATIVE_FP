@@ -21,9 +21,9 @@ const initialState = {
     name: '',
     status: '',
     img: '',
-    size: '',
-    color: '',
-    price: 'purple',
+    size: 'small',
+    color: 'Purple',
+    price: '100',
     count: 1,
     img2: '',
     description: '',
@@ -39,7 +39,7 @@ export const SingleProduct = connect(mapsStateToProps, {
 })(({route, navigation, accessToken, data, addToFavorites, addToCart, updateCartItem}) => {
     const [state, setState] = useState(initialState);
     const [loaded, setLoaded] = useState(false);
-
+    console.log("dataaaaaaaaaaaaaaa",data)
     const getSingleCategoryData = async (id) => {
         const req = await getDataFetchUrl(`http://petsco.justportfolio.tk/api/products/${id}?api_token=${accessToken}`);
         setState((state) => {
@@ -59,7 +59,6 @@ export const SingleProduct = connect(mapsStateToProps, {
         setLoaded(true);
     };
 
-    console.log("sad", state);
 
     useEffect(() => {
         const req = getSingleCategoryData(route.params?.id);
@@ -109,7 +108,8 @@ export const SingleProduct = connect(mapsStateToProps, {
                 count: state.count,
             });
         showAddToCartHandler();
-        navigation.navigate("Home");
+        setState((state)=>({...state,count:1}));
+        navigation.navigate("Cart");
     };
 
     // function for adding item to Favorites screen

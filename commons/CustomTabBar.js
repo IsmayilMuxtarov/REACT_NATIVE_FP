@@ -1,5 +1,5 @@
-import React from 'react'
-import { View, Text, TouchableOpacity,StyleSheet } from 'react-native';
+import React,{useState,useEffect,useRef} from 'react'
+import { View, Text, TouchableOpacity,StyleSheet,Keyboard } from 'react-native';
 import { CustomBtn } from '../components';
 
 import { AntDesign } from '@expo/vector-icons'; 
@@ -9,10 +9,20 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { COLORS } from '../styles/colors';
 import { FONT_FAMILIES } from '../styles/fonts';
 
-function CustomTabBar({ state, descriptors, navigation }) {
-  const focusedOptions = descriptors[state.routes[state.index].key].options;
+function CustomTabBar({ state, descriptors, navigation,route }) {
+  const [isOpen, setIsOpen] = useState(false);  
+  const keyboardShowListener = useRef(null);
+  const keyboardHideListener = useRef(null);
+  useEffect(() => {      
+    keyboardShowListener.current = Keyboard.addListener('keyboardDidShow', () => setIsOpen(true));
+    keyboardHideListener.current = Keyboard.addListener('keyboardDidHide', () => setIsOpen(false));
+    return () => { keyboardShowListener.current.remove();keyboardHideListener.current.remove();}
+  });
 
-  if (focusedOptions.tabBarVisible === false) {
+
+  const focusedOptions = descriptors[state.routes[state.index].key].options;
+  const data = state.routes.filter(item=>item.name=="Home");
+  if (isOpen === true) {
     return null;
   }
 

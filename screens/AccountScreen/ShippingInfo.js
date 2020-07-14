@@ -29,17 +29,9 @@ export const ShippingInfo = ({navigation}) => {
                     </View>
                 </View>
                 <View style={styles.contentBottom}>
-                    <View style={styles.contentBottomText}>
-                        <CustomText weight='medium' style={{color: "#0a1063"}}>Rewards</CustomText>
-                    </View>
+
                     <View style={styles.bottomView}>
-                        <View>
-                            <CustomText weight='medium' style={{color: "white"}}>540 Points = 54 LE</CustomText>
-                            <CustomText weight='light'
-                                        style={{color: "white", marginTop: 10, fontStyle: "italic", fontSize: 12,}}>
-                                Express on 30 Mar 2020
-                            </CustomText>
-                        </View>
+
                         <Image style={styles.bottomImg}
                                ImageResizeMode='cover'
                                source={{uri: "https://cdn0.iconfinder.com/data/icons/logistic-52/64/Bike-delivery-motorbike-package-512.png"}}/>
@@ -126,8 +118,8 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         marginTop: 5,
-        paddingHorizontal: 20,
-        backgroundColor: COLORS.primary,
+        padding: 20,
+        backgroundColor: COLORS.color7,
         borderRadius: 10,
     },
 

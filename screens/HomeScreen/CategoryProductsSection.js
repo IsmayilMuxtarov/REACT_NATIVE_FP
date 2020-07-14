@@ -4,7 +4,7 @@ import { CustomText, CustomBtn } from '../../components'
 import { COLORS } from '../../styles/colors'
 import { FONT_FAMILIES } from '../../styles/fonts'
 import { ProductItem } from './components'
-import { FlatList } from 'react-native-gesture-handler'
+import { FlatList, ScrollView } from 'react-native-gesture-handler'
 
 export const CategoryProductsSection = ({title,btnTitle,productData,fetchUrl,goSingleProductHandler,goProductsHandler}) => {
     // console.log(productData)
@@ -15,6 +15,14 @@ export const CategoryProductsSection = ({title,btnTitle,productData,fetchUrl,goS
                 <CustomBtn onPress={()=>goProductsHandler(fetchUrl,title)} width="20%" title={btnTitle} btnStyle={styles.btnStyle} textStyle={styles.btnTextStyle}/>
             </View>
             <View style={styles.productsWrapper}>
+                {/* <ScrollView style={styles.productsFlatlistContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
+                    {
+                        productData.map(item=>{
+                            return(
+                                <ProductItem key={item.id} item={item} goSingleProductHandler={goSingleProductHandler}/>                            );    
+                        })
+                    }
+                </ScrollView> */}
                 <FlatList
                     style={styles.productsFlatlistContainer}
                     showsHorizontalScrollIndicator={false}
@@ -31,7 +39,7 @@ export const CategoryProductsSection = ({title,btnTitle,productData,fetchUrl,goS
 }
 
 const styles = StyleSheet.create({
-    container:{backgroundColor:'#F3FBEE',borderRadius:35,marginBottom:60,paddingVertical:20,marginHorizontal:20,},
+    container:{backgroundColor:'#F3FBEE',borderRadius:35,marginBottom:60,paddingVertical:20,},
     txtWrapper:{flexDirection:'row',paddingHorizontal:16,justifyContent:'space-between',alignItems:'center'},
     textStyle:{color:COLORS.secondary,fontSize:20,},
     btnStyle:{backgroundColor:'#F3FBEE',justifyContent:'flex-end'},

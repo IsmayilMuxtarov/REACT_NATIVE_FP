@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 
 import {CartFavsItem, CustomText} from "../components";
 import {getCart} from "../store/cart";
+import { CustomLayout } from '../commons';
 
 
 const mapStateToProps = (state) => ({
@@ -11,12 +12,12 @@ const mapStateToProps = (state) => ({
 });
 
 
-export const CartScreen = connect(mapStateToProps)((props) => {
-
+export const CartScreen = connect(mapStateToProps)(({data,navigation}) => {
+    console.log("catr data___________________________",data);
     // function for getting the sum of the items cost
     const getTotalCost = () => {
         let totalSum = 0;
-        props.data.cart.map((item) => {
+        data.cart.map((item) => {
             const discount = parseInt(item.status);
             if (!isNaN(discount)) {
                 totalSum = totalSum + (((item.price * discount) / 100) * item.count);
@@ -27,13 +28,12 @@ export const CartScreen = connect(mapStateToProps)((props) => {
         return totalSum;
     };
 
-    const favorites = props.data.cart;
     return (
-        <View style={styles.container}>
+        <CustomLayout style={styles.container}>
             <FlatList
                 showsVerticalScrollIndicator={false}
                 contentContainerStyle={styles.list}
-                data={favorites}
+                data={data.cart}
                 renderItem={({item}) => {
                     return (
                         <CartFavsItem itemID={item.id}
@@ -48,6 +48,7 @@ export const CartScreen = connect(mapStateToProps)((props) => {
                                       count={item.count}/>
                     );
                 }}
+                keyExtractor={(item,index) => (`${item.id}asd`).toString()}
             />
             <View style={styles.checkOut}>
                 <View>
@@ -59,14 +60,14 @@ export const CartScreen = connect(mapStateToProps)((props) => {
                         Free shipping
                     </CustomText>
                 </View>
-                <TouchableOpacity style={styles.checkOutBtn} onPress={() => props.navigation.navigate('Home')}>
+                <TouchableOpacity  style={styles.checkOutBtn} onPress={()=>{navigation.navigate('AddressScreenCheckout',{from:"checkout"})}}>
                     <CustomText weight="medium"
                                 style={{fontSize: 18, color: "#0a1063"}}>
                         Checkout
                     </CustomText>
                 </TouchableOpacity>
             </View>
-        </View>
+        </CustomLayout>
     )
 });
 
@@ -75,8 +76,6 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        borderTopRightRadius: 50,
-        borderTopLeftRadius: 50,
         backgroundColor: '#f2f2f2',
         paddingTop: 20,
 

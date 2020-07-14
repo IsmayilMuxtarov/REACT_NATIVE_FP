@@ -1,16 +1,18 @@
+
 import React from 'react'
 import {View, TouchableOpacity, StyleSheet, Image, Dimensions} from 'react-native'
 import {CustomText} from "../../components";
 import {AccountContent} from "./components";
 import {COLORS} from "../../styles/colors";
+import { CustomLayout } from '../../commons';
 
 export const AccountScreen = ({navigation}) => {
     return (
-        <View style={styles.container}>
+        <CustomLayout style={styles.container}>
             <View style={styles.content}>
                 <View style={styles.head}>
                     <View style={styles.headContainer}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.navigate('AddressScreen')} >
                             <Image style={styles.img}
                                    ImageResizeMode='cover'
                                    source={{uri: "https://choicebroadband.co.nz/wp-content/uploads/2019/10/pic2.jpg"}}/>
@@ -18,7 +20,7 @@ export const AccountScreen = ({navigation}) => {
                         <CustomText weight='medium' style={{color: "#0a1063"}}>My Address</CustomText>
                     </View>
                     <View style={styles.headContainer}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.navigate('PetsScreen')}>
                             <Image style={styles.img}
                                    ImageResizeMode='cover'
                                    source={{uri: "https://image.freepik.com/free-vector/_39961-391.jpg"}}/>
@@ -26,7 +28,7 @@ export const AccountScreen = ({navigation}) => {
                         <CustomText weight='medium' style={{color: "#0a1063"}}>My Pets</CustomText>
                     </View>
                     <View style={styles.headContainer}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=>navigation.navigate('OrdersScreen')}>
                             <Image style={styles.img}
                                    ImageResizeMode='cover'
                                    source={{uri: "https://previews.123rf.com/images/magurok/magurok1704/magurok170400061/76041725-hand-holding-checklist-and-hand-holding-pen-sheet-of-paper-with-check-marks-tick-icons-filling-form-.jpg"}}/>
@@ -41,10 +43,10 @@ export const AccountScreen = ({navigation}) => {
                     </View>
                     <View style={styles.bottomView}>
                         <View>
-                            <CustomText weight='medium' style={{color: "white"}}>540 Points = 54 LE</CustomText>
+                            <CustomText weight='medium' style={{color: "white"}}>10 Points = 1 Euro</CustomText>
                             <CustomText weight='light'
                                         style={{color: "white", marginTop: 10, fontStyle: "italic", fontSize: 12,}}>
-                                Express on 30 Mar 2020
+                                Express on 30 July 2020
                             </CustomText>
                         </View>
                         <Image style={styles.bottomImg}
@@ -53,7 +55,7 @@ export const AccountScreen = ({navigation}) => {
                     </View>
                 </View>
             </View>
-        </View>
+        </CustomLayout>
     )
 };
 
@@ -64,8 +66,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 50,
         paddingBottom: 70,
-        borderTopRightRadius: 50,
-        borderTopLeftRadius: 50,
         backgroundColor: "#f2f2f2",
     },
 

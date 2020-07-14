@@ -4,8 +4,8 @@ import { CustomText } from "../../../components";
 import { COLORS } from "../../../styles/colors";
 
 
-export const CategoryItem = ({disabled,id, title,imgUrl,bgColor,goCategoryPageHandler,alignSelf,width,height=0, textStyle = {},containerStyle={} }) => (
-  <TouchableOpacity disabled={disabled} onPress={()=>goCategoryPageHandler(id,title)} style={[styles.container,{ width,height,alignSelf,backgroundColor:bgColor,...containerStyle }]}>
+export const CategoryItem = ({disabled,id, title,imgUrl,bgColor,onPressHandler,alignSelf,width,height=0, textStyle = {},containerStyle={} }) => (
+  <TouchableOpacity disabled={disabled} onPress={()=>onPressHandler(id,title)} style={[styles.container,{ width,height,alignSelf,backgroundColor:bgColor,...containerStyle }]}>
     <View style={styles.ImgWrapper}>
         <Image source={{uri:imgUrl}} style={[styles.img,{height:height*0.38}]} resizeMode={"contain"}/>
     </View>
