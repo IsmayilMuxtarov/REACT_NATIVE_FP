@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a486efbc-2cab-4efa-b1f0-67fb6d911bce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/REACT_NATIVE_FP.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/AccountScreen/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/AccountScreen/index.js" afterDir="false" />
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/screens/CartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/CartScreen.js" afterDir="false" />
+=======
+>>>>>>> master
+      <change beforePath="$PROJECT_DIR$/screens/FavoriteScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/screens/FavoriteScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,10 +44,14 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -58,6 +65,13 @@
       <updated>1593527735350</updated>
       <workItem from="1593527755725" duration="684000" />
       <workItem from="1593528927862" duration="6679000" />
+      <workItem from="1593965857079" duration="4184000" />
+      <workItem from="1593971088721" duration="1780000" />
+      <workItem from="1593974456024" duration="8015000" />
+      <workItem from="1594031542869" duration="24280000" />
+      <workItem from="1594117090567" duration="9369000" />
+      <workItem from="1594211456287" duration="19498000" />
+      <workItem from="1594298616316" duration="12390000" />
     </task>
     <servers />
   </component>
@@ -65,13 +79,61 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1593546054491">
+    <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1594323172161">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
+<<<<<<< HEAD
     <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1593546054491" />
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1593967244775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1593967244775" />
+    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1593967244775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1593967244775" />
+    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1593967244775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1593967244775" />
+    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1593967244775">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1593967244775" />
+    <state x="184" y="7" key="SettingsEditor" timestamp="1594234469391">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="7" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1594234469391" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1594233876300">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1594233876300" />
+=======
+    <state x="460" y="168" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1594323172161" />
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1594323439392">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1594323439392" />
+>>>>>>> master
     <state x="405" y="277" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1593545637216">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="405" y="277" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1366.728@0.0.1366.728" timestamp="1593545637216" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/screens/CartScreen.js</url>
+          <line>79</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/store/favorites.js</url>
+          <line>50</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

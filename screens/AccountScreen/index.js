@@ -1,20 +1,4 @@
-// import React from 'react'
-// import { View,Text,StyleSheet,Button } from 'react-native'
 
-// export const AccountScreen = ({navigation}) => {
-//     return (
-//         <View>
-//             <Text>AccountScreen</Text>
-//             <Button title="Pets screen" onPress={()=>navigation.navigate('PetsScreen')} />
-//             <Button title="Address screen" onPress={()=>navigation.navigate('AddressScreen')} />
-//             <Button title="Orders screen" onPress={()=>navigation.navigate('OrdersScreen')} />
-//         </View>
-//     )
-// }
-
-// const styles= StyleSheet.create({
-
-// });
 import React from 'react'
 import {View, TouchableOpacity, StyleSheet, Image, Dimensions} from 'react-native'
 import {CustomText} from "../../components";
