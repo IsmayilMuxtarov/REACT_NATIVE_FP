@@ -1,7 +1,9 @@
 // Shortering text for title and other thing
 export function textShortening(text,length){
-    if(text.length > +length){ text = `${text.slice(0,length+1)} ...`; }
-    return text;
+    if(text){
+        if(text.length > +length){ text = `${text.slice(0,length+1)} ...`; }
+        return text;
+    }
 }
 
 // Validation sections

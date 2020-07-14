@@ -9,6 +9,7 @@ import { CategoryItem } from './components';
 import { ScrollView, FlatList } from 'react-native-gesture-handler';
 import { CustomText } from '../../components';
 import { CategoryProductsSection } from './CategoryProductsSection';
+import { CustomLayout } from '../../commons';
 const mapsStateToProps=(state)=>({accessToken:getUserAccessToken(state)});
 
 export const HomeCategoryScreen = connect(mapsStateToProps)(({navigation,route,accessToken}) => {
@@ -19,28 +20,28 @@ export const HomeCategoryScreen = connect(mapsStateToProps)(({navigation,route,a
         setState(data);
         setLoaded(true);
     }
-    useEffect(()=>{
-        const req = getSingleCategoryData(route.params?.id);
-    },[route]);
+    useEffect(()=>{ const req = getSingleCategoryData(route.params?.id); },[route]);
 
     const goChildCategoryProductsHandler = (id,title)=>{
-        navigation.navigate('Categories', {screen: 'ProductsScreen',params: { fetchUrl:`http://petsco.justportfolio.tk/api/products/getproductsbychildcategory/${id}?api_token=`,title },});
+        navigation.navigate('Categories', {screen: 'ProductsScreen',params: { fetchUrl:`http://petsco.justportfolio.tk/api/products/getproductsbychildcategory/${id}?`,title,query:false },});
+    }
+    const goProductsHandler=(fetchUrl,title)=>{
+        navigation.navigate('Categories', {screen: 'ProductsScreen',params: { fetchUrl,title,query:false },});
     }
     const goSingleProductHandler=(id,title)=>{
         navigation.navigate('Categories', {screen: 'SingleProduct',params: { id,title },});
     }
-    const goProductsHandler=(fetchUrl,title)=>{
-        navigation.navigate('Categories', {screen: 'ProductsScreen',params: { fetchUrl,title },});
-    }
+    
     if (!loaded) {
         return (
-            <View style={{flex:1,justifyContent:'center',}}>
+            <CustomLayout style={{flex:1,justifyContent:'center',}}>
                 <ActivityIndicator size="large" color={COLORS.primary} />
-            </View>
+            </CustomLayout>
         );
       }
       return (
-        <View style={styles.container}>
+        <View style={styles.pageContainer}>
+            <View style={styles.pageWrapper}>
             
             <ScrollView showsVerticalScrollIndicator={false} style={styles.PagescrollContainer}>
                 <View style={styles.categoryFlatlistContainer}>
@@ -56,7 +57,7 @@ export const HomeCategoryScreen = connect(mapsStateToProps)(({navigation,route,a
                     horizontal={true}
                     renderItem={({item,index})=>{
                         return (
-                            <CategoryItem disabled={false} textStyle={{fontSize:12}}  id={item.id} title={item.name} width={80} height={110} bgColor={state.data.color} goCategoryPageHandler={goChildCategoryProductsHandler} imgUrl={item.image}/>
+                            <CategoryItem disabled={false} textStyle={{fontSize:12}}  id={item.id} title={item.name} width={80} height={110} bgColor={state.data.color} onPressHandler={goChildCategoryProductsHandler} imgUrl={item.image}/>
                         )
                     }}
                     keyExtractor={(item,index) => item.id.toString()}
@@ -65,7 +66,7 @@ export const HomeCategoryScreen = connect(mapsStateToProps)(({navigation,route,a
                     state.data.childcategories.map(item=>{
                         if(item.products.length !== 0){
                             return(
-                                <CategoryProductsSection key={item.id} disabled={false} title={item.name} btnTitle="See All" fetchUrl={`http://petsco.justportfolio.tk/api/products/getproductsbychildcategory/${item.id}?api_token=`}  productData={item.products} goProductsHandler={goProductsHandler} goSingleProductHandler={goSingleProductHandler} />
+                                <CategoryProductsSection key={item.id} disabled={false} title={item.name} btnTitle="See All" fetchUrl={`http://petsco.justportfolio.tk/api/products/getproductsbychildcategory/${item.id}?`}  productData={item.products} goProductsHandler={goProductsHandler} goSingleProductHandler={goSingleProductHandler} />
                             );
                         }
                     })
@@ -73,12 +74,15 @@ export const HomeCategoryScreen = connect(mapsStateToProps)(({navigation,route,a
 
             </ScrollView>
         </View>
+        </View>
     )
 });
 
 const styles = StyleSheet.create({
-    container: {flex: 1,backgroundColor: COLORS.primary,position:'relative',zIndex:1,},
-    PagescrollContainer:{backgroundColor:COLORS.colorText,borderTopLeftRadius:20,borderTopRightRadius:20,},
+    pageContainer: {flex: 1,backgroundColor: COLORS.primary,},
+    pageWrapper:{backgroundColor:COLORS.colorText,borderTopLeftRadius:25,borderTopRightRadius:25,paddingTop:25,},
+
+    PagescrollContainer:{backgroundColor:COLORS.colorText,},
     categoryFlatlistContainer:{height:160,zIndex:100,marginTop:30},
     txtWrapper:{paddingHorizontal:20,justifyContent:'center',},
     childCatNameTxt:{color:COLORS.secondary,fontSize:25,},
