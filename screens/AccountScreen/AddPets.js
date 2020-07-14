@@ -20,9 +20,8 @@ export const AddPets = connect(mapStateToProps,{addUserPets,setAuthStatus})(({na
     useLayoutEffect(()=>{ if(userData.email.length === 0){  navigation.navigate('SignInScreen'); }},[userData])
     const [fields,setFields] = useState(fieldsInitialState);
     const [validation,setValidation] = useState(true);
-
+    console.log(fields);
     const fieldsChangeHandler = (name,value)=>{ 
-        if((name==="months" || name==="years") && (value === '' || isNaN(value)) ){value  = 0;}
         setFields((fields)=>({...fields,[name]:value}));
     }
     const addAnotherPetHandler =()=>{
@@ -50,11 +49,11 @@ export const AddPets = connect(mapStateToProps,{addUserPets,setAuthStatus})(({na
             <View style={styles.footer}>
             <CustomText weight="medium" style={styles.footerTopText}>Choose your pet type</CustomText>
                 <View style={styles.typeWrapperContainer}>
-                    <PetsType bgColor={COLORS.color1} imageSource={IMAGES.cdog} type="Dog" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/> 
-                    <PetsType bgColor={COLORS.color2} imageSource={IMAGES.ccat} type="Cat" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/> 
-                    <PetsType bgColor={COLORS.color3} imageSource={IMAGES.cbird} type="Bird" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/>
-                    <PetsType bgColor={COLORS.color4} imageSource={IMAGES.cfish} type="Fish" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/> 
-                    <PetsType bgColor={COLORS.color5} imageSource={IMAGES.csmall} type="Small" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/>          
+                    <PetsType bgColor={COLORS.color1} imageSource={IMAGES.Dog} type="Dog" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/> 
+                    <PetsType bgColor={COLORS.color2} imageSource={IMAGES.Cat} type="Cat" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/> 
+                    <PetsType bgColor={COLORS.color3} imageSource={IMAGES.Bird} type="Bird" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/>
+                    <PetsType bgColor={COLORS.color4} imageSource={IMAGES.Fish} type="Fish" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/> 
+                    <PetsType bgColor={COLORS.color5} imageSource={IMAGES.Small} type="Small" currentType={fields.type} fieldsChangeHandler={fieldsChangeHandler}/>          
                 </View>
             <CustomField fieldStyle={styles.fieldStyle}  labelStyle={styles.labelStyle} validation={validation} type="name"  label="Pet name" value={fields.name} onChangeText={(value)=>fieldsChangeHandler("name",value)} />
             <CustomText weight="regular" style={styles.petAgeText}>Pet Age</CustomText>

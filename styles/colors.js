@@ -7,6 +7,7 @@ export const COLORS  = {
     color4:'#437F97',
     color5:'#03CEA4',
     color6:'#FF5964',  
+    color7:'#F3FBEE',
     colorText:'#ffffff'
   };
   

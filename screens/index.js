@@ -8,4 +8,13 @@ export { FavoriteScreen } from "./FavoriteScreen";
 export { ProductsScreen } from "./ProductsScreen";
 export { SingleProduct } from "./ProductsScreen/SingleProduct";
 export { AccountScreen } from "./AccountScreen";
+export { PetsScreen } from "./AccountScreen/PetsScreen";
 export { AddPets } from "./AccountScreen/AddPets";
+export { AddPetsScreen } from "./AccountScreen/AddPetsScreen";
+export { AddressScreen } from "./AccountScreen/AddressScreen";
+export { AboutUs } from "./AccountScreen/AboutUs";
+export { ShippingInfo } from "./AccountScreen/ShippingInfo";
+export { OrdersScreen } from "./AccountScreen/OrdersScreen";
+export { OrderScreen } from "./AccountScreen/OrderScreen";
+export { PlaceOrderScreen } from "./PlaceOrderScreen";
+

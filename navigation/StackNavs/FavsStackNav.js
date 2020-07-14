@@ -7,6 +7,6 @@ const { Navigator, Screen } = createStackNavigator();
 
 export const FavsStackNav = () => (
   <Navigator screenOptions={headerDefaultStyles}>
-    <Screen name="FavsStackNav" component={FavoriteScreen} />
+    <Screen name="FavsStackNav" component={FavoriteScreen} options={{title:"Favorites"}} />
   </Navigator>
 );

@@ -6,6 +6,6 @@ export const headerDefaultStyles = {
     headerStyle: {backgroundColor: COLORS.primary,elevation: 0,shadowOpacity: 0,},
     headerTintColor: COLORS.colorText,
     headerTitleAlign: "center",
-    headerTitleStyle: {fontFamily: FONT_FAMILIES.regular,fontSize: 18,},
+    headerTitleStyle: {fontFamily: FONT_FAMILIES.medium,fontSize: 20,textTransform: 'capitalize'},
   };
   
